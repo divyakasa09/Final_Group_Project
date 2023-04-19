@@ -67,11 +67,17 @@ public class DoctorDirectory {
     public Doctor findDoctor(String doctorId)
     {
         for(Doctor d: this.doctorsList) {
+            System.out.println("Checking doctor ID: " + d.getId());
             if(d.getId().equals(doctorId)) {
                 return d;
             }
         }      
         return null;
     }
-    
+    public void removeDoctor(Doctor doctor) {
+    if (doctorsList.contains(doctor)) {
+        doctorsList.remove(doctor);
+    }
+}
+  
 }

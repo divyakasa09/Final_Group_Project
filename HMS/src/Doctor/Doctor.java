@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Doctor;
+import Hospital.Hospital;
 import Lab.LabTests;
 import UserAccount.UserAccount;
 import Person.Person;
@@ -19,6 +20,7 @@ public class Doctor extends Person {
     Float totalRevenue;
     UserAccount userAcc;
     LabTests labTest;
+    Hospital hospital;
     public Doctor(
             String firstName,
             String lastName,
@@ -99,5 +101,14 @@ public class Doctor extends Person {
     public void setLabTest(LabTests labTest) {
         this.labTest = labTest;
     }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+    
     
 }

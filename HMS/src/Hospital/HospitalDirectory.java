@@ -4,6 +4,9 @@
  */
 package Hospital;
 
+import Business.Business;
+import Doctor.Doctor;
+import UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +15,8 @@ import java.util.ArrayList;
  */
 public class HospitalDirectory {
     ArrayList<Hospital> hospitals;
+    Doctor doctor;
+    
 
     public ArrayList<Hospital> getHospitals() {
         return hospitals;
@@ -55,5 +60,6 @@ public class HospitalDirectory {
         }
         return null;
     }
+  
     
 }

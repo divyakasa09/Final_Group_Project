@@ -4,6 +4,7 @@
  */
 package Business;
 
+import Doctor.DoctorDirectory;
 import Hospital.AppointmentDirectory;
 import Hospital.HospitalDirectory;
 import Insurance.InsuranceAgentDirectory;
@@ -16,10 +17,13 @@ import Pharmacy.MedicineDirectory;
 import Prescription.PrescriptionDirectory;
 import Reports.TestReportDirectory;
 import Role.InsuranceAdminRole;
+import Role.LabTechnicianRole;
 import Role.PharmacistRole;
+import Role.PharmacyAdminRole;
 import Role.SystemAdminRole;
 import UserAccount.UserAccountDirectory;
-
+import Role.HospitalAdminRole;
+import Role.LabAdminRole;
 /**
  *
  * @author divya
@@ -37,6 +41,7 @@ public class Business {
     TestRequestDirectory testPerformRequests;
     PrescriptionDirectory prescriptions;
     TestReportDirectory reports;
+    DoctorDirectory doctorDir;
 
     public Business() {
         this.hospitals = new HospitalDirectory();
@@ -51,12 +56,15 @@ public class Business {
         this.medicines = new MedicineDirectory();
         this.reports = new TestReportDirectory();
         this.prescriptions = new PrescriptionDirectory();
+        this.doctorDir= new DoctorDirectory();
         this.testPerformRequests = new TestRequestDirectory();
         this.topLevelUserAccountDirectory.createUserAccount("admin", "admin", new SystemAdminRole());
         this.topLevelUserAccountDirectory.createUserAccount("pharmacist", "admin", new PharmacistRole());
-        //this.topLevelUserAccountDirectory.createUserAccount("Lab","admin",new LabAdminRole());
+        this.topLevelUserAccountDirectory.createUserAccount("labtech","admin",new LabTechnicianRole());
          this.topLevelUserAccountDirectory.createUserAccount("Insurance", "admin", new InsuranceAdminRole());
-       
+       this.topLevelUserAccountDirectory.createUserAccount("PharAdmin", "admin", new PharmacyAdminRole());
+       this.topLevelUserAccountDirectory.createUserAccount("Lab", "admin", new LabAdminRole());
+         this.topLevelUserAccountDirectory.createUserAccount("Hospital", "admin", new HospitalAdminRole());
     }
     
     public PatientDirectory getPatients() {
@@ -157,5 +165,15 @@ public class Business {
 
     public void setReports(TestReportDirectory reports) {
         this.reports = reports;
-    }   
+    }  
+
+    public DoctorDirectory getDoctorDir() {
+        return doctorDir;
+    }
+
+    public void setDoctorDir(DoctorDirectory doctorDir) {
+        this.doctorDir = doctorDir;
+    }
+    
+    
 }
