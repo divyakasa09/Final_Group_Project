@@ -9,5 +9,5 @@ package Doctor;
  * @author divya
  */
 public class DoctorDirectory {
-    
+     
 }

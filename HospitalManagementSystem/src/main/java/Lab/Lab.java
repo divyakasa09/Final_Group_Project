@@ -9,5 +9,7 @@ package Lab;
  * @author divya
  */
 public class Lab {
+    String labid;
+    String labname;
     
 }

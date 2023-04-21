@@ -9,5 +9,5 @@ package Pharmacy;
  * @author divya
  */
 public class Pharmacy {
-    
+  
 }
