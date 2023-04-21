@@ -4,6 +4,10 @@
  */
 package Business;
 
+import Hospital.HospitalDirectory;
+import Insurance.InsuranceDirectory;
+import Lab.LabDirectory;
+import Pharmacy.PharmacyDirectory;
 import Role.SystemAdminRole;
 import UserAccount.UserAccountDirectory;
 
@@ -12,7 +16,12 @@ import UserAccount.UserAccountDirectory;
  * @author divya
  */
 public class Business {
-   UserAccountDirectory topLevelUserAccountDirectory;
+    
+    HospitalDirectory hospitals;
+    LabDirectory labs;
+    PharmacyDirectory pharmacies;
+    InsuranceDirectory insurancePlans;   
+    UserAccountDirectory topLevelUserAccountDirectory;
 
     public Business() {
          this.topLevelUserAccountDirectory = new UserAccountDirectory();
