@@ -4,6 +4,7 @@
  */
 package Business;
 
+import Insurance.InsuranceAgent.ApplicantDirectory;
 import Insurance.Plans.InsurancePlanDetails;
 import Role.InsuranceAgentRole;
 import Role.SystemAdminRole;
@@ -16,12 +17,14 @@ import UserAccount.UserAccountDirectory;
 public class Business {
    UserAccountDirectory topLevelUserAccountDirectory;
    InsurancePlanDetails planDirectory;
+   ApplicantDirectory applicantDirectory;
 
     public Business() {
          this.topLevelUserAccountDirectory = new UserAccountDirectory();
           this.topLevelUserAccountDirectory.createUserAccount("admin", "admin", new SystemAdminRole());
            this.topLevelUserAccountDirectory.createUserAccount("IA", "IA", new InsuranceAgentRole());
            this. planDirectory = new InsurancePlanDetails();
+           this.applicantDirectory=new ApplicantDirectory();
          
     }
 
@@ -43,6 +46,14 @@ public class Business {
 
     public void setPlanDirectory(InsurancePlanDetails planDirectory) {
         this.planDirectory = planDirectory;
+    }
+
+    public ApplicantDirectory getApplicantDirectory() {
+        return applicantDirectory;
+    }
+
+    public void setApplicantDirectory(ApplicantDirectory applicantDirectory) {
+        this.applicantDirectory = applicantDirectory;
     }
    
 }
