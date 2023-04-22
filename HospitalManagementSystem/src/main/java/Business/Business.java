@@ -4,6 +4,11 @@
  */
 package Business;
 
+import Lab.TestDirectory;
+import Lab.VaccinationDirectory;
+import Pharmacy.MedicineDirectory;
+import Role.LabTechnicianRole;
+import Role.PharmacistRole;
 import Role.SystemAdminRole;
 import UserAccount.UserAccountDirectory;
 
@@ -13,10 +18,19 @@ import UserAccount.UserAccountDirectory;
  */
 public class Business {
    UserAccountDirectory topLevelUserAccountDirectory;
+   MedicineDirectory medicineDir;
+   VaccinationDirectory vaccineDir;
+   TestDirectory testDir;
 
     public Business() {
          this.topLevelUserAccountDirectory = new UserAccountDirectory();
+         this.medicineDir = new MedicineDirectory();
+         this.vaccineDir = new VaccinationDirectory();
+         this.testDir= new TestDirectory();
           this.topLevelUserAccountDirectory.createUserAccount("admin", "admin", new SystemAdminRole());
+          
+          this.topLevelUserAccountDirectory.createUserAccount("pharmacy", "pharmacy", new PharmacistRole());
+          this.topLevelUserAccountDirectory.createUserAccount("lab", "lab", new LabTechnicianRole());
     }
 
     public UserAccountDirectory getTopLevelUserAccountDirectory() {
@@ -26,6 +40,33 @@ public class Business {
     public void setTopLevelUserAccountDirectory(UserAccountDirectory topLevelUserAccountDirectory) {
         this.topLevelUserAccountDirectory = topLevelUserAccountDirectory;
     }
+
+    public MedicineDirectory getMedicineDir() {
+        return medicineDir;
+    }
+
+    public void setMedicineDir(MedicineDirectory medicineDir) {
+        this.medicineDir = medicineDir;
+    }
+
+    public VaccinationDirectory getVaccineDir() {
+        return vaccineDir;
+    }
+
+    public void setVaccineDir(VaccinationDirectory vaccineDir) {
+        this.vaccineDir = vaccineDir;
+    }
+
+    public TestDirectory getTestDir() {
+        return testDir;
+    }
+
+    public void setTestDir(TestDirectory testDir) {
+        this.testDir = testDir;
+    }
+    
+    
+    
    
     public static Business getInstance() {
         return new Business();
