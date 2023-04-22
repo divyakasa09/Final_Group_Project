@@ -8,6 +8,32 @@ package Lab;
  *
  * @author divya
  */
-public class Lab {
+public class Test {
+    private String testName;
+    private float testPrice;
+    
+    public Test(String testName, float testPrice) {
+        this.testName = testName;
+        this.testPrice= testPrice;
+       
+    }
+
+    public String getTestName() {
+        return testName;
+    }
+
+    public void setTestName(String testName) {
+        this.testName = testName;
+    }
+
+    public float getTestPrice() {
+        return testPrice;
+    }
+
+    public void setTestPrice(float testPrice) {
+        this.testPrice = testPrice;
+    }
+    
+    
     
 }
