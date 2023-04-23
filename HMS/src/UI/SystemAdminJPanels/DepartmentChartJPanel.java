@@ -83,6 +83,7 @@ public class DepartmentChartJPanel extends javax.swing.JPanel {
             pieDataset,PlotOrientation.VERTICAL,
             true, true, false);
         //P.setForegroundAlpha(TOP_ALIGNMENT);
+       // chart
         ChartPanel panel = new ChartPanel(barChart);
         chartpanel.add(panel);
         panel.setVisible(true);

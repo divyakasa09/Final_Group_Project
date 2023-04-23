@@ -23,7 +23,7 @@ public class PatientPrescriptionsJPanel extends javax.swing.JPanel {
     public Business business;
     public UserAccount userAccount;
     DefaultTableModel prescTableModel;
-    
+//    patientPrescription
     public PatientPrescriptionsJPanel() {
         initComponents();
     }

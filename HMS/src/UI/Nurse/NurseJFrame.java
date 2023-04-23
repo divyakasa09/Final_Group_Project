@@ -19,6 +19,7 @@ public class NurseJFrame extends javax.swing.JFrame {
      */
     Business business;
     UserAccount useraccount;
+// UI Added
     
     public NurseJFrame() {
         initComponents();
