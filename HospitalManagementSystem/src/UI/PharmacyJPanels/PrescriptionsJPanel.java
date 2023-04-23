@@ -41,7 +41,7 @@ public class PrescriptionsJPanel extends javax.swing.JPanel {
         if(ps.size() >= 0) {
             prescTableModel.setRowCount(0);
             for(Prescription p: ps) {
-                    Object row[] = new Object[7];
+                    Object row[] = new Object[9];
                     row[0] = p.getPrescriptionId();
                     row[1] = p.getDoctor().getFirstName() + ' ' + p.getDoctor().getLastName();
                     row[2] = p.getPatient().getFirstName() + ' ' + p.getPatient().getLastName();
@@ -49,6 +49,19 @@ public class PrescriptionsJPanel extends javax.swing.JPanel {
                     row[4] = p.getQuantity();
                     row[5] = p.getStatus();
                     row[6] = p.getMedicine().getPrice() * p.getQuantity();
+                    if (p.getPatient().getInsurancePlan() != null)
+                    {
+                        InsurancePlans ip = p.getPatient().getInsurancePlan();
+                        Float coverage = ip.getCoveragePercentage();
+
+                        row[7] = (p.getMedicine().getPrice() * p.getQuantity()) * coverage;
+                        row[8] = (p.getMedicine().getPrice() * p.getQuantity()) - ((p.getMedicine().getPrice() * p.getQuantity()) * coverage);
+
+                    }
+                    else{
+                        row[7] = 0.00;
+                        row[8] =  p.getMedicine().getPrice() * p.getQuantity();
+                    }
                     prescTableModel.addRow(row);
                 } 
         }        
@@ -70,13 +83,13 @@ public class PrescriptionsJPanel extends javax.swing.JPanel {
 
         prescriptionsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Pres Id", "Doctor", "Patient", "Medicine", "Quantity", "Status", "Total Cost"
+                "Pres Id", "Doctor", "Patient", "Medicine", "Quantity", "Status", "Total Cost", "Paid by Ins", "Paid by Patient"
             }
         ));
         jScrollPane1.setViewportView(prescriptionsTable);

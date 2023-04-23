@@ -15,6 +15,12 @@ import javax.swing.JFrame;
  */
 public class LabTechnicianRole extends Role {
     @Override
+    public String getName()
+    {
+        return "Lab Tech";
+    }
+    
+    @Override
     public JFrame createWorkArea(Business business, UserAccount useraccount) {
         return new InsuranceAgentRegistrationJFrame(business);
     }

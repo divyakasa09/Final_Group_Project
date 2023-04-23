@@ -17,6 +17,12 @@ import javax.swing.JFrame;
  */
 public class PharmacistRole extends Role {
     @Override
+    public String getName()
+    {
+        return "Pharmacist";
+    }
+    
+    @Override
     public JFrame createWorkArea(Business business, UserAccount useraccount) {
         return new PharmacistJFrame(business,useraccount);
     } 

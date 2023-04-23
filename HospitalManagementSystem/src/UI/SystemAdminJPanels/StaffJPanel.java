@@ -59,7 +59,7 @@ public class StaffJPanel extends javax.swing.JPanel {
                     Object row[] = new Object[5];
                     row[0] = d.getId();
                     row[1] = d.getFirstName() + ' ' + d.getLastName();
-                    row[2] = d.getRole();
+                    row[2] = d.getRole().getName();
                     row[3] = d.getPhoneNumber();
                     row[4] = h.getHospitalName();
                     staffTableModel.addRow(row);
@@ -292,7 +292,7 @@ public class StaffJPanel extends javax.swing.JPanel {
         this.business.getTopLevelUserAccountDirectory().getUseraccountList().add(ua);
         displayStaffMembers();
        
-       JOptionPane.showMessageDialog(null, "Doctor registered successfully!");
+       JOptionPane.showMessageDialog(null, "Staff member registered successfully!");
     }//GEN-LAST:event_addStaffBtnActionPerformed
 
 

@@ -16,6 +16,12 @@ import javax.swing.JFrame;
  * @author divya
  */
 public class InsuranceAgentRole extends Role {
+    @Override
+    public String getName()
+    {
+        return "Insurance Agent";
+    }
+    
    @Override
     public JFrame createWorkArea(Business business, UserAccount useraccount) {
         return new InsAgentJFrame(business, useraccount);

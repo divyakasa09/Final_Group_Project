@@ -89,7 +89,6 @@ public class DoctorsJPanel extends javax.swing.JPanel {
         docPhoneTextFIeld = new javax.swing.JTextField();
         docEmailTextField = new javax.swing.JTextField();
         docDegreeTextField = new javax.swing.JTextField();
-        docSpecialityTextField = new javax.swing.JTextField();
         docFeeTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         hospCBox = new javax.swing.JComboBox<>();
@@ -100,6 +99,7 @@ public class DoctorsJPanel extends javax.swing.JPanel {
         passTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         doctorsTable = new javax.swing.JTable();
+        specialityCBox = new javax.swing.JComboBox<>();
 
         jLabel1.setText("Firstname");
 
@@ -143,6 +143,8 @@ public class DoctorsJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(doctorsTable);
 
+        specialityCBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cardiology", "Nutrition", "Psychology", "Neurology. Orthopedics", "General Medicine", "Primary Care", "Internal Medicine", "OB/Gyn" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,11 +181,11 @@ public class DoctorsJPanel extends javax.swing.JPanel {
                                     .addComponent(docPhoneTextFIeld)
                                     .addComponent(docEmailTextField)
                                     .addComponent(docDegreeTextField)
-                                    .addComponent(docSpecialityTextField)
                                     .addComponent(docFeeTextField)
-                                    .addComponent(hospCBox, 0, 155, Short.MAX_VALUE)
+                                    .addComponent(hospCBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(unameTextField)
-                                    .addComponent(passTextField))))
+                                    .addComponent(passTextField)
+                                    .addComponent(specialityCBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(81, 81, 81)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 851, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -223,7 +225,7 @@ public class DoctorsJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(docSpecialityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(specialityCBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -254,7 +256,7 @@ public class DoctorsJPanel extends javax.swing.JPanel {
        String email = docEmailTextField.getText();
        String address = docAddressTextField.getText();
        String degree = docDegreeTextField.getText();
-       String speciality = docSpecialityTextField.getText();
+       String speciality = specialityCBox.getSelectedItem().toString();
        Float fee = Float.valueOf(docFeeTextField.getText());
        String userName = unameTextField.getText();
        String password = passTextField.getText();
@@ -300,7 +302,6 @@ public class DoctorsJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField docFeeTextField;
     private javax.swing.JTextField docLNameTextField;
     private javax.swing.JTextField docPhoneTextFIeld;
-    private javax.swing.JTextField docSpecialityTextField;
     private javax.swing.JTable doctorsTable;
     private javax.swing.JComboBox<String> hospCBox;
     private javax.swing.JLabel jLabel1;
@@ -316,6 +317,7 @@ public class DoctorsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField passTextField;
+    private javax.swing.JComboBox<String> specialityCBox;
     private javax.swing.JTextField unameTextField;
     // End of variables declaration//GEN-END:variables
 }

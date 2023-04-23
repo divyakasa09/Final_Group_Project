@@ -14,6 +14,13 @@ import javax.swing.JFrame;
  * @author divya
  */
 public class NurseRole extends Role {
+    
+    @Override
+    public String getName()
+    {
+        return "Nurse";
+    }
+    
    @Override
     public JFrame createWorkArea(Business business, UserAccount useraccount) {
         return new NurseJFrame(business,useraccount);

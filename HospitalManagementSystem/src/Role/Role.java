@@ -29,6 +29,7 @@ public abstract class Role  {
         return roles;
     }
     
+    public abstract String getName();
     public abstract JFrame createWorkArea(Business business, UserAccount ua);
 }
 

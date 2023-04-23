@@ -76,12 +76,10 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="ptnInsPlans" max="32767" attributes="0"/>
                               <Component id="ptnApts" max="32767" attributes="0"/>
-                              <Component id="ptnVitals" max="32767" attributes="0"/>
                               <Component id="ptnPres" max="32767" attributes="0"/>
-                              <Component id="ptnBills" max="32767" attributes="0"/>
                               <Component id="ptnlogout" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="57" max="32767" attributes="0"/>
+                          <EmptySpace pref="58" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -93,12 +91,8 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="ptnApts" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ptnVitals" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="ptnPres" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ptnBills" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="238" max="32767" attributes="0"/>
+                          <EmptySpace pref="320" max="32767" attributes="0"/>
                           <Component id="ptnlogout" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
                       </Group>
@@ -122,11 +116,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ptnAptsActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="ptnVitals">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Vitals"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JButton" name="ptnPres">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Prescriptions"/>
@@ -134,11 +123,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ptnPresActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="ptnBills">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Bills"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="ptnlogout">
                   <Properties>

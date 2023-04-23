@@ -15,6 +15,11 @@ import javax.swing.JFrame;
  * @author divya
  */
 public class SystemAdminRole extends Role {
+    @Override
+    public String getName()
+    {
+        return "System Admin";
+    }
 
     @Override
     public JFrame createWorkArea(Business business, UserAccount useraccount) {

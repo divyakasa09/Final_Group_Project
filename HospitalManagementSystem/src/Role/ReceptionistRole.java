@@ -15,6 +15,12 @@ import javax.swing.JFrame;
  * @author divya
  */
 public class ReceptionistRole extends Role {
+    @Override
+    public String getName()
+    {
+        return "Receptionist";
+    }
+    
    @Override
     public JFrame createWorkArea(Business business, UserAccount useraccount) {
         return new ReceptionistJFrame(business,useraccount);

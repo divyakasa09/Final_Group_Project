@@ -9,10 +9,12 @@ import Doctor.Doctor;
 import Hospital.Appointment;
 import Hospital.Hospital;
 import Insurance.InsuranceEnrollment;
+import Insurance.InsurancePlans;
 import Patient.Patient;
 import UserAccount.UserAccount;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -62,7 +64,7 @@ public class AppointmentsJPanel extends javax.swing.JPanel {
             for(Appointment a: aps) {
                 if (a.getPatient().getId().equals(userAccount.getPersonId()))
                 {
-                    Object row[] = new Object[7];
+                    Object row[] = new Object[9];
                     row[0] = a.getAppointmentId();
                     row[1] = a.getHospital().getHospitalName();
                     row[2] = a.getDoctor().getId() + ';' + a.getDoctor().getFirstName() + ' ' + a.getDoctor().getLastName();
@@ -70,6 +72,19 @@ public class AppointmentsJPanel extends javax.swing.JPanel {
                     row[4] = a.getAppointmentHour();
                     row[5] = a.getStatus();
                     row[6] = a.getCost();
+                    if (a.getPatient().getInsurancePlan() != null)
+                    {
+                        InsurancePlans ip = a.getPatient().getInsurancePlan();
+                        Float coverage = ip.getCoveragePercentage();
+
+                        row[8] = a.getCost() * coverage;
+                        row[9] = a.getCost() - (a.getCost() * coverage);
+
+                    }
+                    else{
+                        row[8] = 0.00;
+                        row[9] = a.getCost();
+                    }
                     aptsTableModel.addRow(row);
                 }
             }
@@ -118,13 +133,13 @@ public class AppointmentsJPanel extends javax.swing.JPanel {
 
         ptnAptsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Apt Id", "Hospital Name", "Doctor Name", "Date", "Time", "Status", "Cost"
+                "Apt Id", "Hospital Name", "Doctor Name", "Date", "Time", "Status", "Cost", "Paid by Insurance", "Paid by Patient"
             }
         ));
         jScrollPane1.setViewportView(ptnAptsTable);
@@ -204,16 +219,21 @@ public class AppointmentsJPanel extends javax.swing.JPanel {
         Patient currentPatient = this.business.getPatients().findPatient(userAccount.getPersonId());
         
         Date selectedDate = selAptDate.getDate();
-        String selectedTime = selectTimeCBox.getSelectedItem().toString();
-        
-        this.business.getAppointments().addAppointment(hospital, currentPatient, doctor, selectedDate, selectedTime);
-        
-        displayAppointments();
+        if(selectedDate.before(new Date()))
+        {
+            JOptionPane.showMessageDialog(null, "Please select a valid future date!");
+        }
+        else
+        {
+            String selectedTime = selectTimeCBox.getSelectedItem().toString();
+            this.business.getAppointments().addAppointment(hospital, currentPatient, doctor, selectedDate, selectedTime);
+            displayAppointments();
+        }
     }//GEN-LAST:event_requestAptBtnActionPerformed
 
     private void cancelAptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelAptBtnActionPerformed
         int selectedRowIndex = ptnAptsTable.getSelectedRow();
-        String aptId = ptnAptsTable.getValueAt(selectedRowIndex, 1).toString();
+        String aptId = ptnAptsTable.getValueAt(selectedRowIndex, 0).toString();
         Appointment apt = this.business.getAppointments().findAppointment(aptId);
         apt.setStatus("Cancelled");
         

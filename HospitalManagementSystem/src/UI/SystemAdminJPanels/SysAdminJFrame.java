@@ -41,11 +41,10 @@ public class SysAdminJFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         hospitalsBtn = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         doctorsBtn = new javax.swing.JButton();
         staffBtn = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
+        entReportsBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,10 +59,6 @@ public class SysAdminJFrame extends javax.swing.JFrame {
         });
 
         jButton2.setText("Lab");
-
-        jButton3.setText("Pharmacy");
-
-        jButton4.setText("Insurance");
 
         doctorsBtn.setText("Doctors");
         doctorsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -86,21 +81,27 @@ public class SysAdminJFrame extends javax.swing.JFrame {
             }
         });
 
+        entReportsBtn.setText("Enterprise Reports");
+        entReportsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entReportsBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(staffBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(doctorsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hospitalsBtn)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)
-                    .addComponent(logoutBtn))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(entReportsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(doctorsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hospitalsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,13 +112,11 @@ public class SysAdminJFrame extends javax.swing.JFrame {
                 .addComponent(doctorsBtn)
                 .addGap(18, 18, 18)
                 .addComponent(staffBtn)
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(36, 36, 36)
+                .addGap(29, 29, 29)
+                .addComponent(entReportsBtn)
+                .addGap(89, 89, 89)
                 .addComponent(logoutBtn)
                 .addContainerGap(130, Short.MAX_VALUE))
         );
@@ -154,6 +153,10 @@ public class SysAdminJFrame extends javax.swing.JFrame {
         this.setVisible(false);
         new MainJFrame(business);
     }//GEN-LAST:event_logoutBtnActionPerformed
+
+    private void entReportsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entReportsBtnActionPerformed
+        jSplitPane1.setRightComponent(new EnterpriseReportingJPanel(this.business));
+    }//GEN-LAST:event_entReportsBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,10 +195,9 @@ public class SysAdminJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton doctorsBtn;
+    private javax.swing.JButton entReportsBtn;
     private javax.swing.JButton hospitalsBtn;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton logoutBtn;
