@@ -27,6 +27,7 @@ public class TestRequest {
         this.labTest = labTest;
         this.status = "Requested";
         this.isActive = false;
+        // this is constructor
     }
 
     public String getTestId() {
@@ -40,6 +41,7 @@ public class TestRequest {
     public Doctor getDoctor() {
         return doctor;
     }
+    //this is getter and setter
 
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
