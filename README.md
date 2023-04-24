@@ -16,9 +16,15 @@ The Java Swing Framework is the application's basis. Utilization Purposes:
 Contributions:
 We have divided 4 enterprises (Hospital, pharmacy, lab, insurance company) among ourselves and collaborated on the cross- work requests.
 Charts has been worked by Mrudula Chilukuri , Email function has been worked by Divya Kasa and Documentation and diagrams has been handled by Thranathi.
+
+
 Architecture Model:
+
+
 ![image](https://user-images.githubusercontent.com/122681973/233892342-18994ad1-26fb-4ae8-bf71-0d65f795306d.png)
 Class Diagram:
+
+
 ![image](https://user-images.githubusercontent.com/122681973/233892434-8a884862-36a2-4d03-b1a2-d15dcaeccf91.png)
 
 
