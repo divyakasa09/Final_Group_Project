@@ -14,8 +14,18 @@ The Java Swing Framework is the application's basis. Utilization Purposes:
 8.The lab technician is responsible for adding tests that can be performed, performing tests on patients, and updating the test results that can be accessed by both the doctor and the patient. 9.Additionally, patients can choose an insurance plan to receive discounts on medical bills. The insurance agent will review the enrollment request and either accept or reject it.
 10. Overall, our hospital management system offers a variety of medical services and features.
 Contributions:
-We have divided 4 enterprises (Hospital, pharmacy, lab, insurance company) among ourselves and collaborated on the cross- work requests.
-Charts has been worked by Mrudula Chilukuri , Email function has been worked by Divya Kasa and Documentation and diagrams has been handled by Thranathi.
+We have divided 4 enterprises (Hospital, pharmacy, lab, insurance company) among ourselves 
+
+Mrudhula : Hospital Enterprise Funtionalities, 2 Charts,Pharmacy Enterprise,
+
+
+Divya: Insurance Enterprise,Email Feature,One chart,Insurance Admin,Valdations and Null Checks, UI Design,Hospital Admin
+
+
+Thranathi: Lab Enterprise,Pharmacy Enterprise, CRUD Operations by PharmacyAdmin,LabAdmin,Documentation and Diagram
+
+
+and collaborated on the cross- work requests.
 
 
 Architecture Model:
